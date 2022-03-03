@@ -1,30 +1,30 @@
 <div class="card-top container-fluid">
     <div class="container d-flex">
         <div class="item" style="margin: 10px;">
-            <a>
+            <a (click)="filter('')"> 
                 <img style="width: 69px; margin-top: 5px;" src="/assets/allproducts.png" alt="">
                 <h6>All products</h6>
 
             </a>
         </div>
         <div class="item" style="margin: 10px;">
-            <a>
+            <a (click)="filter('electronics')">
                 <img style="width: 120px; margin-top: 5px;" src="/assets/electronique.jpg" alt="">
-                <h6>Electronique</h6>
+                <h6>Electronics</h6>
 
             </a>
         </div>
         <div class="item" style="margin: 10px;">
-            <a>
+            <a (click)="filter('fashion')">
                 <img src="/assets/fashion.jpg" alt="">
                 <h6>Fashion</h6>
 
             </a>
         </div>
         <div class="item" style="margin: 10px;">
-            <a>
+            <a (click)="filter('jewelery')">
                 <img style="width: 106px; margin-top: 5px" src="/assets/Accessoires.jpg" alt="">
-                <h6>Accessoires</h6>
+                <h6>Jewelery</h6>
 
             </a>
         </div>
@@ -35,7 +35,7 @@
 
 <div class="container">
     <div class="row">
-        <ng-container *ngFor="let item of productList">
+        <ng-container *ngFor="let item of filterCategory | filter: searchKey:'title'">
             <div class="card col-md-3">
                 <img src="{{item.image}}" alt="">
                 <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>

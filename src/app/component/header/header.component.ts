@@ -8,6 +8,7 @@ import { CarteService } from '../services/carte.service';
 })
 export class HeaderComponent implements OnInit {
 public totalItem : number =0;
+public searchTerm: string ='';
   constructor(private CarteService : CarteService) { }
 
   ngOnInit(): void {
@@ -15,6 +16,12 @@ public totalItem : number =0;
     .subscribe(res=> {
       this.totalItem =res.length;
     })
+  }
+  search(event:any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.CarteService.search.next(this.searchTerm);
+
   }
 
 }

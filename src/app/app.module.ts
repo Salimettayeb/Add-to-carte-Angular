@@ -7,17 +7,23 @@ import { HeaderComponent } from './component/header/header.component';
 import { CarteComponent } from './component/carte/carte.component';
 import { ProductComponent } from './component/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './component/pipe/filter.pipe';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CarteComponent,
-    ProductComponent
+    ProductComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
